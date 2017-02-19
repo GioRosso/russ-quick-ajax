@@ -1,0 +1,34 @@
+<div class="container">
+
+<h1> Absolute beginner's tutorial to Rails and AJAX </h1>
+<hr />
+<p><img src="http://perfectial.com/wp-content/uploads/2015/02/ruby.png" style="height:96px; width:auto; float:left; padding-right: 10px;">Maybe it's just me, I'm too stupid to get it, but I really did not find an adequate tutorial which would give me a glimpse to how to do just basic AJAX on Rails. That is why I decided to write my own. Just by sticking to the basics, and the concept behind these two, I want to help other people introduce themselves to this handy techniques. I wil have a diagram drawn, and put all my code to GitHub, so other can benefit.</p>
+<p>Writing notes to myself... first thing I notice is that we need to know jQuery, CoffeeScript, Rails partials</p>
+<p> First of... we are going classical! AJAX will be an upgrade, by refactoring the existing application. That way is, I believe, easier to understand.</p>
+<p> Application is as simple as registering the First and the Last Name of your favourite actors (be it male or female). We will set two columns in our 'actors' table > firstname, lastname (text). </p>
+<p> <%= link_to 'Add new Actor or Actress', new_actor_path(), class: 'btn btn-warning' %> <p>
+<hr />
+<div id="actor-display" class="jumbotron">
+<% @glumci.each do |actor|%>
+<%= actor.firstname %> <%= actor.lastname %> (<%= link_to 'X', actor_path(actor), method: 'delete' %>),
+<% end %>
+</div>
+<hr />
+<% if flash[:notice] %>
+    <div class="alert alert-info"><%= flash[:notice] %></div>
+  <% end %>
+<div id="devlog">
+  <!-- <img src="http://edgibbs.com/images/sourcetree_icon.png" style="height:32px; width:auto; padding-right: 10px;"> -->
+  <h2>Development log</h2>
+  <p> #1. rails new russ-quick-ajax </p>
+  <p> #2. rails generate resource Actor firstname:text lastname:text </p>
+  <p> #3. rake db:migrate </p>
+  <p> #4. controllers/actors_controller.rb --> def index | @glumci = Actor.all | end </p>
+  <p> #5. routes.rb --> root 'actors#index'</p>
+  <p> #6. Add create & destroy methods to controller | check GitHub commit |</p>
+  <p> #7. Add Bootstrap CND links for styling and functionality</p>
+
+</div>
+
+
+</div>

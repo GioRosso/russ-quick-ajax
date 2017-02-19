@@ -1,0 +1,18 @@
+<div class="container">
+
+<h1> <img src="http://perfectial.com/wp-content/uploads/2015/02/ruby.png" style="height:32px; width:auto; float:left; padding-right: 10px;"> Absolute beginner's tutorial to Rails and AJAX </h1>
+<hr />
+
+<p>Add new Actor or Actress:</p>
+
+<%= form_for @glumac do |actor| %>
+  <%= actor.label :firstname %>
+  <%= actor.text_field :firstname %>
+  <br>
+  <%= actor.label :lastname %>
+  <%= actor.text_field :lastname %>
+  <br>
+  <%= actor.submit "Add", class:'btn btn-success'%>
+<% end %>
+
+</div>

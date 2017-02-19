@@ -1,0 +1,28 @@
+default: &default
+   adapter: postgresql
+   encoding: unicode
+   host: localhost
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: russ_quick_ajax_dev
+  username: Rusko
+  password:
+  host: localhost
+
+test:
+   adapter: postgresql
+   encoding: unicode
+   host: localhost
+   database: russ_quick_ajax_test
+   username: Rusko
+   password:
+
+production:
+   adapter: postgresql
+   encoding: unicode
+   host: localhost
+   database: russ_quick_ajax_prod
+   username: Rusko
+   password:
